@@ -25,7 +25,7 @@ h1 {
 }
 
 span{
-  color: var(--buttons-color--);
+  color: #ffdd57;
 }
 
 button {
@@ -37,7 +37,9 @@ button {
   border: none; 
   transform: 0.5s ease, color 0.5s ease;
 }
-
+.head{
+  text-align: left;
+}
 
 button:hover {
   color: var(--buttons-color--);
@@ -62,8 +64,9 @@ button:hover {
   z-index: 2;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  height: calc(100vh - 5rem);
+  align-items: center;
+  height: calc(100vh - 10rem);
+  gap: 30px;
   
 }
 
@@ -75,22 +78,16 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/bg.png') no-repeat center center;
+  background: url('./assets/bg.png') no-repeat center center;
   filter: blur(3px);
   background-size: cover;
   opacity: 0.1; 
   z-index: -1; 
 }
 
-.section{
-  width: 30em;
+p{
+  width: 25em;
   margin: 0 auto;
-  background-color: var(--abv-text--);
-  color: #000000;
-  padding: 10px ;
-  padding-left: 10px;
-  border-radius: 15px ;
-  text-align: left;
 }
 
 .crack{
@@ -101,26 +98,50 @@ body::before {
   text-align: center;
 }
 
-.main{
+
+
+.console-box {
+  width: 25rem;
+  height: 20rem;
+  border: 3px double var(--lvlbuttons-color--);
+  margin-left: 20px;
+  padding: 10px;
+  background-color: #c2bdbd46;
+  border-radius:20px;
   display: flex;
-  gap: 20px;
-
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  line-height: 40px;
 }
 
-
-.back-btn{
-  margin-top: 30px;
+.console-box input {
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-
-a.active {
-  color: #e49a07;
+.userOption{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 1rem;
+}
+.userOption button {
+  padding: 10px;
+  width: 5.5rem;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: var(--buttons-color--);
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-a.active button {
-  color: #e49a07;
+.console-box button:hover {
+  background-color: var(--buttons-color--);
 }
 
-a.active button:hover {
-  color: #fff; 
-}

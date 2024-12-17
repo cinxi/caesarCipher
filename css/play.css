@@ -79,7 +79,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/bg.png') no-repeat center center;
+  background: url('./assets/bg.png') no-repeat center center;
   filter: blur(3px);
   background-size: cover;
   opacity: 0.1; 
@@ -237,13 +237,18 @@ body::before {
   margin-top: 4rem;
 }
 
-
-.completed {
-  background-color: var(--buttons-color--); 
-  color: var(--abv-text--);
-  border: 2px ridge var(--buttons-hover--);
-  font-weight: bold;
+/* Completed levels - change button color */
+.level-btn.completed {
+  background-color: #4caf50; /* Green for completed levels */
+  color: white;
 }
+
+/* Current level - add a white border */
+.level-btn.current {
+  border: 2px solid white; /* Highlight the active level */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
 
 a.active {
   color: #e49a07;
@@ -255,4 +260,142 @@ a.active button {
 
 a.active button:hover {
   color: #fff; 
+}
+
+
+
+
+/* Responsive Design */
+
+/* For screens up to 1024px (e.g., tablets) */
+@media screen and (max-width: 1024px) {
+  .level-problem,
+  .console-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .console-box input {
+    font-size: 14px;
+  }
+
+  .userAnswer input,
+  .userAnswer button {
+    font-size: 14px;
+  }
+}
+
+/* For screens up to 768px (e.g., small tablets & large phones) */
+@media screen and (max-width: 768px) {
+  .body-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .level-problem,
+  .console-box {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .userAnswer {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .userAnswer input {
+    font-size: 14px;
+    width: 93%;
+    padding: 10px;
+  }
+
+  .userAnswer button {
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* For screens up to 480px (e.g., smartphones) */
+@media screen and (max-width: 480px) {
+  .body-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Level Selection Container */
+  .level-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .level-selection button {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+  }
+
+  /* Problem Section */
+  .level-problem {
+    width: 100%;
+    padding: 8px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .level-problem h1 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+
+  /* Answer Section */
+  .console-box {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .userAnswer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .userAnswer input {
+    font-size: 12px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .userAnswer button {
+    font-size: 12px;
+    padding: 8px;
+    background-color: #d4911e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .userAnswer button:hover {
+    background-color: #b37719;
+  }
 }
